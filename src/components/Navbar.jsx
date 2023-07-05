@@ -2,7 +2,50 @@ import React, { useState } from 'react'
 import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
 import { motion } from 'framer-motion'
 
+
+
 const Navbar = () => {
+
+    const sidebaranimation = {
+        
+        open: {
+            width: "16rem",
+            transition: {
+                damping: 40,
+            },
+        },
+
+        close: {
+            width: "0rem",
+            transition: {
+                damping: 40,
+            },
+        }
+    }
+
+    const links = [
+        {
+            id: 1,
+            link: 'Home'
+        },
+        {
+            id: 2,
+            link: 'Company'
+        },
+        {
+            id: 1,
+            link: 'Resources'
+        },
+        {
+            id: 1,
+            link: 'About'
+        },
+        {
+            id: 1,
+            link: 'Contact'
+        },
+
+    ]
 
     const [nav, setNav] = useState(true)
 
@@ -11,30 +54,22 @@ const Navbar = () => {
     }
 
   return (
-    <motion.div className=' text-white flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4' initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0}} transition={{ duration: 0.5 }}>
-        <h1 className=' w-full text-3xl font-bold text-[#00df9a]'>REACT.</h1>
-        <ul className=' md:flex hidden'>
-            <li className=' p-4'>Home</li>
-            <li className=' p-4'>Company</li>
-            <li className=' p-4'>Resources</li>
-            <li className=' p-4'>About</li>
-            <li className=' p-4'>Contact</li>
-        </ul>
 
-        <div onClick={handleNav} className=' block md:hidden'>
-            {!nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20}/>}
-        </div>
-        <div className={!nav ? ' fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500' : ' fixed left-[-50%] ease-in-out duration-500'}>
-        <h1 className=' w-full text-3xl font-bold text-[#00df9a] m-4'>REACT.</h1>
-            <ul className=' uppercase p-4'>
-                <li className=' p-4 border-b border-gray-600'>Home</li>
-                <li className=' p-4 border-b border-gray-600'>Company</li>
-                <li className=' p-4 border-b border-gray-600'>Resources</li>
-                <li className=' p-4 border-b border-gray-600'>About</li>
-                <li className=' p-4'>Contact</li>
+    <div className=' text-white'>
+        <div>
+            <h1>React</h1>
+
+            <ul>
+                {links.map(({ id, link }) => 
+                    <li key={id}>
+                        {link}
+                    </li>
+                
+                )}
             </ul>
         </div>
-    </motion.div>
+    </div>
+
   )
 }
 
