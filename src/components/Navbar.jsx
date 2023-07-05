@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
+import { motion } from 'framer-motion'
 
 const Navbar = () => {
 
@@ -10,7 +11,7 @@ const Navbar = () => {
     }
 
   return (
-    <div className=' text-white flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4'>
+    <motion.div className=' text-white flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4' initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0}} transition={{ duration: 0.5 }}>
         <h1 className=' w-full text-3xl font-bold text-[#00df9a]'>REACT.</h1>
         <ul className=' md:flex hidden'>
             <li className=' p-4'>Home</li>
@@ -33,7 +34,7 @@ const Navbar = () => {
                 <li className=' p-4'>Contact</li>
             </ul>
         </div>
-    </div>
+    </motion.div>
   )
 }
 
