@@ -55,21 +55,21 @@ const Navbar = () => {
             </div>
         </motion.div>
         
-        <div className={!nav ? ' text-white fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500': ' fixed left-[-100%]'}>
+        <motion.div animate={{ x: nav ? -300 : 0, opacity: 1 }} initial={{ opacity: 0.1, x: -300 }} transition={{ type: "spring", stiffness: 500, damping: 40}} className= ' text-white fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] block md:hidden'>
 
-            <h1 className=' w-full text-3xl font-bold text-[#00df9a] uppercase mx-4 my-[1.9rem]'>React</h1>
+                <h1 className=' w-full text-3xl font-bold text-[#00df9a] uppercase mx-4 my-[1.9rem]'>React</h1>
 
-            <ul className=' uppercase'>
-                {links.map(({ id, link }) =>
-                    <li key={id} className='cursor-default p-4 border-b border-b-gray-600 hover:text-gray-500 '>
-                        <div className=' hover:scale-105 duration-200'>
-                            {link}
-                        </div>
-                        
-                    </li>
-                )}
-            </ul>
-        </div>
+                <ul className=' uppercase'>
+                    {links.map(({ id, link }) =>
+                        <li key={id} className='cursor-default p-4 border-b border-b-gray-600 hover:text-gray-500 '>
+                            <div>
+                                {link}
+                            </div>
+                            
+                        </li>
+                    )}
+                </ul>
+        </motion.div>
 
     </div>
   )
