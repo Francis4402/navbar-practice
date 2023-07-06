@@ -1,5 +1,6 @@
 import React from 'react';
 import Laptop from '../assets/laptop.jpg';
+import { motion } from 'framer-motion';
 
 const Analytics = () => {
   return (
@@ -15,7 +16,7 @@ const Analytics = () => {
             dolore autem cum ullam sed odit perspiciatis. Doloribus quos velit,
             eveniet ex deserunt fuga?
           </p>
-          <button className='bg-black text-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3'>Get Started</button>
+          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} transition={{ type: "spring", stiffness: 500, damping: 20}} className='bg-black text-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto md:mx-0 py-3'>Get Started</motion.button>
         </div>
       </div>
     </div>

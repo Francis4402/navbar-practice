@@ -1,5 +1,6 @@
 import React from 'react';
 import Typed from 'react-typed'
+import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
@@ -24,7 +25,7 @@ const Hero = () => {
           />
         </div>
         <p className='md:text-2xl text-xl font-bold text-gray-500'>Monitor your data analytics to increase revenue for BTB, BTC, & SASS platforms.</p>
-        <button className='bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black'>Get Started</button>
+        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} transition={{ type: "spring", stiffness: 500, damping: 20}} className='bg-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black'>Get Started</motion.button>
       </div>
     </div>
   );
